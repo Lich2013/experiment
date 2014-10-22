@@ -64,7 +64,7 @@ void main()
 {
 	List L;
 	int m, n;
-	cout << "请输入朋友数和总人数\n" << endl;
+	cout << "请输入朋友数和总人数:\n" << endl;
 	cin >> m >> n;
 	ListInitiate(L);
 	getValue(L, n);
