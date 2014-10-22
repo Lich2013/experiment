@@ -17,48 +17,47 @@ void ListInitiate(List &L)
 	L->next = nullptr;
 }
 
-//赋值
+//赋值构造循环链表
 void getValue(List &L, int n)
 {
-	SLNode *p = L;
-	int i = 1;
-	p->next = nullptr;
-	p->data = NULL;
-	while (i>n)
-	{
-		p->data = i;
-		p = new SLNode;
-		p = p->next;
-		++i;
-	}
 
-		
-		
+	SLNode *r, *p;
 	
-	p->next = L;
+	L->data = 1;
+	L->next = NULL;
+	r = L;										
+	for (int i = 2; i<=n; i++){
+		p = new SLNode;							
+		p->data = i;							
+		p->next = NULL; r->next = p;					
+		r = p;									
+	}
+	r->next = L;
+	 
+	//cout << &L <<"  "<< r->next<<endl;
+	//system("pause");
 }
 
 //kill 
 void ListDelete(List &L, int m, int n)
 {
 	int size = n;
-	SLNode *p = L;
-		/*, *s = nullptr*/
-	/*while (size> m + 1)
+	SLNode *p = L, *s = nullptr;
+	while (size> m + 1)
 	{
 		p = p->next;
 
 
 		--size;
-	}*/
+	}
 	for (int i = 0; i<m; ++i)
 	{
 		
 		cout << p->data << endl;
 		p = p->next;
-		system ("pause");
+		
 	}
-
+	system("pause");
 }
 
 
