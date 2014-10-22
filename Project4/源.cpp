@@ -33,9 +33,6 @@ void getValue(List &L, int n)
 		r = p;									
 	}
 	r->next = L;
-	 
-	//cout << &L <<"  "<< r->next<<endl;
-	//system("pause");
 }
 
 //kill 
@@ -43,18 +40,20 @@ void ListDelete(List &L, int m, int n)
 {
 	int size = n;
 	SLNode *p = L, *s = nullptr;
+	//É¾³ýÈË
 	while (size> m + 1)
 	{
-		p = p->next;
-
-
+		p->next->next = p->next->next->next;
+		p = p->next->next;
 		--size;
 	}
-	for (int i = 0; i<m; ++i)
+	//Êä³öÎ»ÖÃ
+	for (int i = 0; i<m+1; ++i)
 	{
 		
 		cout << p->data << endl;
 		p = p->next;
+		
 		
 	}
 	system("pause");
