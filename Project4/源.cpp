@@ -24,12 +24,12 @@ void getValue(List &L, int n)
 	SLNode *r, *p;
 	
 	L->data = 1;
-	L->next = NULL;
+	L->next = nullptr;
 	r = L;										
 	for (int i = 2; i<=n; i++){
 		p = new SLNode;							
 		p->data = i;							
-		p->next = NULL; r->next = p;					
+		p->next = nullptr; r->next = p;
 		r = p;									
 	}
 	r->next = L;
@@ -56,6 +56,7 @@ void ListDelete(List &L, int m, int n)
 		
 		
 	}
+	cout << "@Author 隆宗益" << endl;
 	system("pause");
 }
 
@@ -64,10 +65,22 @@ void main()
 {
 	List L;
 	int m, n;
-	cout << "请输入朋友数和总人数:\n" << endl;
+	cout << "请输入朋友数和总人数:" << endl;
 	cin >> m >> n;
-	ListInitiate(L);
-	getValue(L, n);
-	ListDelete(L, m, n);
+	if (m >= n)
+	{
+		cout << "数据输入非法" << endl;
+		cout << "@Author 隆宗益" << endl;
+		system("pause");
+	}
+		
+	
+	else
+	{
+		ListInitiate(L);
+		getValue(L, n);
+		ListDelete(L, m, n);
+	}
+	
 
 }
