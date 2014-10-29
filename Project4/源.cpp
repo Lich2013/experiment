@@ -12,7 +12,6 @@ typedef struct Node
 //初始化
 void ListInitiate(List &L)
 {
-
 	L = new SLNode;
 	L->next = nullptr;
 }
@@ -20,17 +19,15 @@ void ListInitiate(List &L)
 //赋值构造循环链表
 void getValue(List &L, int n)
 {
-
 	SLNode *r, *p;
-	
 	L->data = 1;
 	L->next = nullptr;
-	r = L;										
-	for (int i = 2; i<=n; i++){
-		p = new SLNode;							
-		p->data = i;							
+	r = L;
+	for (int i = 2; i <= n; i++){
+		p = new SLNode;
+		p->data = i;
 		p->next = nullptr; r->next = p;
-		r = p;									
+		r = p;
 	}
 	r->next = L;
 }
@@ -48,13 +45,10 @@ void ListDelete(List &L, int m, int n)
 		--size;
 	}
 	//输出位置
-	for (int i = 0; i<m+1; ++i)
+	for (int i = 0; i<m + 1; ++i)
 	{
-		
 		cout << p->data << endl;
 		p = p->next;
-		
-		
 	}
 	cout << "@Author 隆宗益" << endl;
 	system("pause");
@@ -73,14 +67,13 @@ void main()
 		cout << "@Author 隆宗益" << endl;
 		system("pause");
 	}
-		
-	
+
+
 	else
 	{
 		ListInitiate(L);
 		getValue(L, n);
 		ListDelete(L, m, n);
 	}
-	
 
 }
